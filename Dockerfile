@@ -82,7 +82,7 @@ RUN yum update -y \
    && yum clean all \
    && rm -rf /var/cache/yum
 
-RUN pip install tiny-thumbnail-engine[server] --upgrade
+RUN pip install --no-cache-dir tiny-thumbnail-engine[server]==0.2.0 --upgrade
 
 COPY server.py ${LAMBDA_TASK_ROOT}/server.py
 
